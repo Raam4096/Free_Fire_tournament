@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Fire Tournament Registration</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWwLjgxALVT0Ei9b6_NTMiJ8Lxj01kZ3q4ag&s') no-repeat center center fixed;
+      background-size: cover;
+      color: #00ff94;
+      text-shadow: 0 0 10px #00ff94cc;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 15px;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.75);
+      border-radius: 20px;
+      padding: 30px 40px;
+      max-width: 1000px;
+      width: 100%;
+      box-shadow: 0 0 40px #00ff94aa;
+      color: #c9f2de;
+    }
+
+    h1 {
+      text-align: center;
+      font-weight: 900;
+      font-size: 2.5rem;
+      margin-bottom: 25px;
+      text-shadow: 0 0 15px #00ff94ff;
+    }
+
+    .details-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 35px;
+      flex-wrap: wrap;
+    }
+
+    .details {
+      flex: 1 1 55%;
+      min-width: 280px;
+    }
+
+    .details h2 {
+      font-weight: 700;
+      color: #00ff94;
+      margin-bottom: 15px;
+      text-shadow: 0 0 15px #00ff94ff;
+    }
+
+    .details p, .details ul {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    .details ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .details ul li {
+      margin-bottom: 6px;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .details ul li::before {
+      content: "🔥";
+      position: absolute;
+      left: 0;
+    }
+
+    .person-image {
+      flex: 1 1 40%;
+      min-width: 200px;
+      text-align: center;
+    }
+
+    .person-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 30px #00ff94aa;
+      user-select: none;
+    }
+
+    .form-qr-wrapper {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    iframe {
+      flex: 1 1 600px;
+      min-height: 650px;
+      max-width: 100%;
+      border: 3px solid #00ff94cc;
+      border-radius: 15px;
+      box-shadow: 0 0 25px #00ff94aa;
+    }
+
+    .qr-code {
+      flex: 0 0 200px;
+      text-align: center;
+    }
+
+    .qr-code img {
+      max-width: 180px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00ff94cc;
+    }
+
+    .qr-code p {
+      margin-top: 10px;
+      font-weight: 600;
+      color: #00ff94;
+      text-shadow: 0 0 10px #00ff94cc;
+      font-size: 1rem;
+    }
+
+    footer {
+      margin-top: 50px;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      color: #b9ffdb;
+      box-shadow: 0 0 15px #00ff94aa;
+    }
+
+    footer a {
+      color: #00ff94;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 750px) {
+      .details-wrapper {
+        flex-direction: column;
+        text-align: center;
+      }
+      .person-image {
+        margin-top: 20px;
+      }
+      .form-qr-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+      iframe {
+        min-height: 600px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔥 Free Fire Squad Tournament 🔥</h1>
+
+    <div class="details-wrapper">
+      <div class="details">
+        <h2>Tournament Details</h2>
+        <p><strong>Date & Time:</strong> <span id="matchDate"></span> at 6:00 PM</p>
+        <p><strong>Entry Fee:</strong> ₹100 per squad (Pay via UPI & upload payment screenshot)</p>
+        <p><strong>Prizes:</strong></p>
+        <ul>
+          <li>🥇 ₹300 for 1st Place</li>
+          <li>🥈 ₹200 for 2nd Place</li>
+        </ul>
+        <p><strong>Rules:</strong></p>
+        <ul>
+          <li>Only squads allowed (teams of 4 players)</li>
+          <li>No cheating or hacks - immediate disqualification</li>
+          <li>Entry fee is non-refundable</li>
+          <li>Match time is fixed, no reschedules</li>
+        </ul>
+        <p>Register your squad using the form below and secure your spot!</p>
+      </div>
+      <div class="person-image">
+        <img src="https://i.pinimg.com/236x/7f/f3/b5/7ff3b5d37ecb6704bfb1299878da6f97.jpg" alt="Free Fire Poster" />
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-bottom: 25px;">
+  <button onclick="window.open('https://forms.gle/VDKW4QNgDnhYZ7rL9', '_blank')" style="background-color: #00ff94; color: #000; padding: 14px 28px; font-size: 1.1rem; font-weight: bold; border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 0 15px #00ff94cc;">
+    🚀 Register Your Squad Now
+  </button>
+  <p>Click above button to fill your details !!!</p>
+</div>
+
+
+      <div class="qr-code">
+        <img  height="150px" src="./Scanner.jpg" alt="UPI QR Code" />
+        <p>Scan & Pay Entry Fee</p>
+        <p><strong>UPI ID:</strong> 8008397100@ybl</p>
+        <p><strong>Name:</strong> Janaki Ram</p>
+      </div>
+    </div>
+  
+
+  <footer>
+    <p>📞 Contact Us: <a href="mailto:freefiretourney@gmail.com">janakirampedireddi@gmail.com</a> | 📱 8465079293</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+    <p>&copy; 2025 Free Fire Tournament by Raam. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const dateSpan = document.getElementById('matchDate');
+    const today = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    dateSpan.textContent = today.toLocaleDateString(undefined, options);
+  </script>
+</body>
+</html>
